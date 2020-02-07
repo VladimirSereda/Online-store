@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
   end
 
   def who_bought
-    @product = Product.find(params[:id])]
+    @product = Product.find(params[:id])
     @latest_order = @product.orders.order(:updated_at).last
     if stale?(@lastet_order)
       respond_to do |format|
